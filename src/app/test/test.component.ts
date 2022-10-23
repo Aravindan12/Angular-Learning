@@ -16,7 +16,10 @@ import { Component, OnInit } from '@angular/core';
               <h2 class="text-success">Test Class</h2>
               <h2 [class]="successClass">Test Class Binding </h2>
               <h2 [class.text-danger]="hasError">Test Class Binding </h2>
-              <h2 [ngClass]="messageClasses">Test Class Binding </h2>`,
+              <h2 [ngClass]="messageClasses">Test Class Binding </h2>
+              <h2 [style.color]="'red'">Style Binding </h2>
+              <h2 [style.color]="highlightColor">Style Binding </h2>
+              <h2 [ngStyle]="titleStyles">Style Binding </h2>`,
   styles: [`
     .text-success {
       color:green;
@@ -43,6 +46,12 @@ export class TestComponent implements OnInit {
     "text-danger" : this.hasError,
     "text-special" : this.isSpecial,
   }
+  public highlightColor = "orange";
+  public titleStyles = {
+    color: "blue",
+    fontStyle: "italic",
+  };
+
   // ng-class directive dynamically binds one or more CSS classes
   constructor() { }
 
