@@ -21,7 +21,9 @@ import { Component, OnInit } from '@angular/core';
               <h2 [style.color]="highlightColor">Style Binding </h2>
               <h2 [ngStyle]="titleStyles">Style Binding </h2>
               <button (click)="onClick()">Event </button>
-              {{greeting}}`,
+              {{greeting}}
+              <input #myInput type="text">
+              <button (click)="logMessage(myInput.value)">Log</button>`,
   styles: [`
     .text-success {
       color:green;
@@ -66,5 +68,9 @@ export class TestComponent implements OnInit {
 
   onClick(){
     this.greeting = "vanakam";
+  }
+
+  logMessage(value: any){
+    console.log(value)
   }
 }
