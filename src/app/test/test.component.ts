@@ -19,7 +19,9 @@ import { Component, OnInit } from '@angular/core';
               <h2 [ngClass]="messageClasses">Test Class Binding </h2>
               <h2 [style.color]="'red'">Style Binding </h2>
               <h2 [style.color]="highlightColor">Style Binding </h2>
-              <h2 [ngStyle]="titleStyles">Style Binding </h2>`,
+              <h2 [ngStyle]="titleStyles">Style Binding </h2>
+              <button (click)="onClick()">Event </button>
+              {{greeting}}`,
   styles: [`
     .text-success {
       color:green;
@@ -51,7 +53,7 @@ export class TestComponent implements OnInit {
     color: "blue",
     fontStyle: "italic",
   };
-
+  public greeting = "";
   // ng-class directive dynamically binds one or more CSS classes
   constructor() { }
 
@@ -62,4 +64,7 @@ export class TestComponent implements OnInit {
     return "Hello " + this.name;
   }
 
+  onClick(){
+    this.greeting = "vanakam";
+  }
 }
